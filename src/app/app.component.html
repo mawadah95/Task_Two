@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="app.component.css">
+
+<div class="h">
+<h1 style="font-family:Cursive;  font-weight:bold;">{{ title }}</h1>
+<br>
+<br>
+<p>{{ subtitle }}</p>
+<br> <br>
+</div>
+<br><br> <br> 
+
+<input placeholder="Write and Add" [(ngModel)]="userInput"  type="text" [(ngModel)]="textInput" (ngModelChange)="validateTextInput()" />
+<div *ngIf="isInputInvalid" class="error-message">Text length must be between 4 and 200 characters and no special characters are allowed.</div>
+
+<!-- type="text" [(ngModel)]="textInput" (ngModelChange)="validateTextInput()" />
+<div *ngIf="isInputInvalid" class="error-message">Text length must be between 4 and 200 characters.</div>-->
+&nbsp; &nbsp;<button class="addBtn" (click)="onSubmit()"> Add</button>
+
+<br> <br>
+<br> <br>
+
+<ul>
+<li *ngFor="let item of todoList">
+  {{ item }}
+  <button class="delebtn" (click)="deleteItem(item)">Delete</button>
+</li>
+
+<!--
+<ul>
+  <li *ngFor="let item of todoList" (click)="onDelete(item)">{{ item }}</li>
+</ul>-->
+
+  
